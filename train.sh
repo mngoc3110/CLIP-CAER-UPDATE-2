@@ -44,25 +44,25 @@ run () {
 # =========================
 run "1/10 baseline + class_names" "\
 --exper-name BL_class_names \
---prompt-set baseline \
+--prompt_set baseline \
 --text-type class_names \
 "
 
 run "2/10 baseline + class_names_with_context" "\
 --exper-name BL_class_names_with_context \
---prompt-set baseline \
+--prompt_set baseline \
 --text-type class_names_with_context \
 "
 
 run "3/10 baseline + class_descriptor_only_face" "\
 --exper-name BL_desc_only_face \
---prompt-set baseline \
+--prompt_set baseline \
 --text-type class_descriptor_only_face \
 "
 
 run "4/10 baseline + class_descriptor (full)" "\
 --exper-name BL_desc_full \
---prompt-set baseline \
+--prompt_set baseline \
 --text-type class_descriptor \
 "
 
@@ -71,13 +71,13 @@ run "4/10 baseline + class_descriptor (full)" "\
 # =========================
 run "5/10 student_context + class_names" "\
 --exper-name ST_class_names \
---prompt-set student_context \
+--prompt_set student_context \
 --text-type class_names \
 "
 
 run "6/10 student_context + class_names_with_context" "\
 --exper-name ST_class_names_with_context \
---prompt-set student_context \
+--prompt_set student_context \
 --text-type class_names_with_context \
 "
 
@@ -86,19 +86,19 @@ run "6/10 student_context + class_names_with_context" "\
 # =========================
 run "7/10 descriptor + only_face" "\
 --exper-name DS_only_face \
---prompt-set descriptor \
+--prompt_set descriptor \
 --text-type class_descriptor_only_face \
 "
 
 run "8/10 descriptor + only_body" "\
 --exper-name DS_only_body \
---prompt-set descriptor \
+--prompt_set descriptor \
 --text-type class_descriptor_only_body \
 "
 
 run "9/10 descriptor + face_and_body" "\
 --exper-name DS_face_and_body \
---prompt-set descriptor \
+--prompt_set descriptor \
 --text-type class_descriptor \
 "
 
@@ -107,7 +107,7 @@ run "9/10 descriptor + face_and_body" "\
 # =========================
 run "10/10 ensemble" "\
 --exper-name ENS_prompt_ensemble \
---prompt-set ensemble \
+--prompt_set ensemble \
 --text-type prompt_ensemble \
 "
 
