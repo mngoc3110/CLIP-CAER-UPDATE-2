@@ -149,13 +149,19 @@ class VideoDataset(data.Dataset):
 
     def get(self, record, indices):
         video_frames_path = glob.glob(os.path.join(record.path, '*'))
-        video_frames_path.sort()  
-        random_num = random.random()
+        video_frames_path.sort()
         images = list()
         images_face = list()
+        num_frames_on_disk = len(video_frames_path)
+
         for seg_ind in indices:
             p = int(seg_ind)
             for i in range(self.duration):
+                if num_frames_on_disk == 0:
+                    continue
+                if p >= num_frames_on_disk:
+                    p = num_frames_on_disk - 1
+
                 img_path = os.path.join(video_frames_path[p])
                 parent_dir = os.path.dirname(img_path)
                 file_name = os.path.basename(img_path)
@@ -188,8 +194,12 @@ class VideoDataset(data.Dataset):
 
                 images.extend(seg_imgs)
                 images_face.extend(seg_imgs_face)
-                if p < record.num_frames - 1:
+                if p < num_frames_on_disk - 1:
                     p += 1
+        if not images:
+            images.append(Image.new('RGB', (self.image_size, self.image_size)))
+        if not images_face:
+            images_face.append(Image.new('RGB', (self.image_size, self.image_size)))
 
         images = self.transform(images)
         images = torch.reshape(images, (-1, 3, self.image_size, self.image_size))
