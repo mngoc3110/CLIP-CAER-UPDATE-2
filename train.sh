@@ -20,11 +20,11 @@ COMMON_ARGS="\
 --seed 42 \
 --print-freq 10 \
 --root-dir ./ \
---train-annotation RAER/annotation/train.txt \
---test-annotation RAER/annotation/test.txt \
+--train-annotation /kaggle/input/raer-video-emotion-dataset/RAER/annotation/train.txt \
+--test-annotation /kaggle/input/raer-video-emotion-dataset/RAER/annotation/test.txt \
 --clip-path ViT-B/32 \
---bounding-box-face RAER/bounding_box/face.json \
---bounding-box-body RAER/bounding_box/body.json \
+--bounding-box-face /kaggle/input/raer-video-emotion-dataset/RAER/bounding_box/face.json \
+--bounding-box-body /kaggle/input/raer-video-emotion-dataset/RAER/bounding_box/body.json \
 --contexts-number 8 \
 --class-token-position end \
 --class-specific-contexts True \
