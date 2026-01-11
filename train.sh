@@ -3,7 +3,7 @@ set -e
 
 COMMON_ARGS="\
 --mode train \
---gpu mps \
+--gpu 0 \
 --epochs 20 \
 --batch-size 8 \
 --lr 0.003 \
