@@ -1,0 +1,10 @@
+# Ignore directories
+outputs/
+RAER/
+
+# Ignore pycache
+**/__pycache__/
+*.pyc
+
+# Ignore OS-specific files
+.DS_Store

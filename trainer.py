@@ -83,7 +83,7 @@ class Trainer:
 
         logging.info(f"{prefix} * WAR: {war:.3f} | UAR: {uar:.3f}")
         with open(self.log_txt_path, 'a') as f:
-            f.write('Current UAR: {war:.3f}'.format(war=war) + '\n')
+            f.write('Current WAR: {war:.3f}'.format(war=war) + '\n')
             f.write('Current UAR: {uar:.3f}'.format(uar=uar) + '\n')
         return war, uar, losses.avg, cm
         

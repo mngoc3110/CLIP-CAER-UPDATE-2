@@ -2,14 +2,14 @@
 
 python main.py \
     --mode eval \
-    --gpu 2 \
-    --exper-name test_eval \
-    --eval-checkpoint /media/D/zlm/code/CLIP_CAER/outputs_1/test-[07-09]-[22:24]/model_best.pth \
-    --root-dir /media/F/FERDataset/AER-DB \
-    --test-annotation RAER/test_abs.txt \
-    --clip-path /media/D/zlm/code/single_four/models/ViT-B-32.pt \
-    --bounding-box-face /media/F/FERDataset/AER-DB/RAER/bounding_box/face_abs.json \
-    --bounding-box-body /media/F/FERDataset/AER-DB/RAER/bounding_box/body_abs.json \
+    --gpu mps \
+    --exper-name baseline-test-valid-train \
+    --eval-checkpoint outputs/train_baseline_batch-size-8-train-val-test-[01-09]-[23:00]/model_best.pth \
+    --root-dir ./ \
+    --test-annotation RAER/annotation/test.txt \
+    --clip-path ViT-B/32 \
+    --bounding-box-face RAER/bounding_box/face.json \
+    --bounding-box-body RAER/bounding_box/body.json \
     --text-type class_descriptor \
     --contexts-number 8 \
     --class-token-position end \
