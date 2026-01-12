@@ -3,7 +3,7 @@ set -e
 
 COMMON_ARGS="\
 --mode train \
---gpu 0 \
+--gpu mps \
 --epochs 20 \
 --batch-size 8 \
 --lr 0.003 \
@@ -20,11 +20,11 @@ COMMON_ARGS="\
 --seed 42 \
 --print-freq 10 \
 --root-dir ./ \
---train-annotation /kaggle/input/raer-video-emotion-dataset/RAER/annotation/train.txt \
---test-annotation /kaggle/input/raer-video-emotion-dataset/RAER/annotation/test.txt \
+--train-annotation /content/drive/MyDrive/khoaluan/DatasetRAER/annotation/train.txt \
+--test-annotation /content/drive/MyDrive/khoaluan/DatasetRAER/annotation/test.txt \
 --clip-path ViT-B/32 \
---bounding-box-face /kaggle/input/raer-video-emotion-dataset/RAER/bounding_box/face.json \
---bounding-box-body /kaggle/input/raer-video-emotion-dataset/RAER/bounding_box/body.json \
+--bounding-box-face /content/drive/MyDrive/khoaluan/DatasetRAER/bounding_box/face.json \
+--bounding-box-body /content/drive/MyDrive/khoaluan/DatasetRAER/bounding_box/body.json \
 --contexts-number 8 \
 --class-token-position end \
 --class-specific-contexts True \
